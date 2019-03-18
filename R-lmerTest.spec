@@ -4,18 +4,33 @@
 #
 Name     : R-lmerTest
 Version  : 3.1.0
-Release  : 8
+Release  : 9
 URL      : https://cran.r-project.org/src/contrib/lmerTest_3.1-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lmerTest_3.1-0.tar.gz
 Summary  : Tests in Linear Mixed Effects Models
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: R-ggplot2
-Requires: R-lme4
-Requires: R-numDeriv
+Requires: R-gtable
+Requires: R-lazyeval
+Requires: R-minqa
+Requires: R-munsell
+Requires: R-nloptr
+Requires: R-pbkrtest
+Requires: R-plyr
+Requires: R-scales
+Requires: R-tibble
 BuildRequires : R-ggplot2
+BuildRequires : R-gtable
+BuildRequires : R-lazyeval
 BuildRequires : R-lme4
+BuildRequires : R-minqa
+BuildRequires : R-munsell
+BuildRequires : R-nloptr
 BuildRequires : R-numDeriv
+BuildRequires : R-pbkrtest
+BuildRequires : R-plyr
+BuildRequires : R-scales
+BuildRequires : R-tibble
 BuildRequires : buildreq-R
 
 %description
@@ -33,10 +48,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1549911185
+export SOURCE_DATE_EPOCH=1552888272
 
 %install
-export SOURCE_DATE_EPOCH=1549911185
+export SOURCE_DATE_EPOCH=1552888272
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -72,8 +87,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library lmerTest|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  lmerTest || :
 
 
 %files
@@ -106,3 +120,17 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/lmerTest/testdata/legacy_fits.RData
 /usr/lib64/R/library/lmerTest/testdata/potdata.RData
 /usr/lib64/R/library/lmerTest/testdata/test_paper_objects.RData
+/usr/lib64/R/library/lmerTest/tests/test_a_utils.R
+/usr/lib64/R/library/lmerTest/tests/test_anova.R
+/usr/lib64/R/library/lmerTest/tests/test_compare_sas.R
+/usr/lib64/R/library/lmerTest/tests/test_contest1D.R
+/usr/lib64/R/library/lmerTest/tests/test_contestMD.R
+/usr/lib64/R/library/lmerTest/tests/test_drop1.R
+/usr/lib64/R/library/lmerTest/tests/test_legacy.R
+/usr/lib64/R/library/lmerTest/tests/test_lmer.R
+/usr/lib64/R/library/lmerTest/tests/test_lmerTest_paper.R
+/usr/lib64/R/library/lmerTest/tests/test_ls_means.R
+/usr/lib64/R/library/lmerTest/tests/test_ranova_step.R
+/usr/lib64/R/library/lmerTest/tests/test_summary.R
+/usr/lib64/R/library/lmerTest/tests/test_zerovar.R
+/usr/lib64/R/library/lmerTest/tests/zlmerTest_zeroDenom.R
