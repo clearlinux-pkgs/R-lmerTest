@@ -4,7 +4,7 @@
 #
 Name     : R-lmerTest
 Version  : 3.1.1
-Release  : 18
+Release  : 19
 URL      : https://cran.r-project.org/src/contrib/lmerTest_3.1-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lmerTest_3.1-1.tar.gz
 Summary  : Tests in Linear Mixed Effects Models
