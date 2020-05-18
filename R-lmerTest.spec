@@ -4,7 +4,7 @@
 #
 Name     : R-lmerTest
 Version  : 3.1.2
-Release  : 20
+Release  : 21
 URL      : https://cran.r-project.org/src/contrib/lmerTest_3.1-2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lmerTest_3.1-2.tar.gz
 Summary  : Tests in Linear Mixed Effects Models
@@ -27,21 +27,22 @@ for lmer model fits (cf. lme4) via Satterthwaite's degrees of freedom method. A
 
 %prep
 %setup -q -c -n lmerTest
+cd %{_builddir}/lmerTest
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1586449623
+export SOURCE_DATE_EPOCH=1589828206
 
 %install
-export SOURCE_DATE_EPOCH=1586449623
+export SOURCE_DATE_EPOCH=1589828206
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
